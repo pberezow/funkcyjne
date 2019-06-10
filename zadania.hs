@@ -126,6 +126,8 @@ leafCount :: BTree a -> Int
 leafCount tree = foldTree l 1 tree
 
 -- 77.
+
+-- 82.
 newtype Writer w a = Writer (a,w) deriving Show
 
 instance Functor (Writer w) where
@@ -150,5 +152,3 @@ h x = do
                     if x `mod` 2 == 0 then Writer (f x, (1, "+"))
                     else Writer (f x, (1, "-"))
                 )
-
--- 82.
